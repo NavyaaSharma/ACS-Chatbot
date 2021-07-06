@@ -7,9 +7,16 @@ var server = restify.createServer()
 server.listen(3978, function () {
     console.log("Server is listening to port 3978")
 })
+
+var appId = "12beee4a-668d-462d-9e4b-28e88a6a6896";
+var appSecret = "Veb7#J}jy@0bjY#Ax}#45MdMFhC.5";
+
 //Chat connector to bot emulator
 var inMemoryStorage = new builder.MemoryBotStorage();
-var connector = new builder.ChatConnector()
+var connector = new builder.ChatConnector({
+    appId: appId,
+    appPassword: appSecret
+})
 var inMemoryStorage = new builder.MemoryBotStorage();
 var bot = new builder.UniversalBot(connector).set('storage', inMemoryStorage);
 
