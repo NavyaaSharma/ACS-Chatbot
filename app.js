@@ -4,7 +4,7 @@ var crypto = require('crypto')
 var fetch = require('node-fetch')
 
 var server = restify.createServer()
-server.listen(process.env.port || 3978, function () {
+server.listen(process.env.PORT || 3978, function () {
     console.log("Server is listening to port 3978")
 })
 
