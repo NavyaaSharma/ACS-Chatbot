@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"No test specified\"",
-    "start": "node app.js",
-    "build": "node app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
