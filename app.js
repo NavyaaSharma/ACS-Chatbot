@@ -224,7 +224,7 @@ bot.dialog('preconfirm', [(session, args, next) => {
         fetchRes.then(res =>
             res.json()).then(d => {
                 console.log(d)
-                session.send("Please click on the link to connect to our " + session.userData.dept + " Department customer service team. " + `http://localhost:3000/join/live/chat?id=${id}&dept=${session.userData.dept}`);
+                session.send("Please click on the link to connect to our " + session.userData.dept + " Department customer service team. " + `http://localhost:8000?id=${id}&dept=${session.userData.dept}`);
                 session.send("Thanks for contacting me.")
                 delete session.userData.dept;
                 delete session.userData.issue;
