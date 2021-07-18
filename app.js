@@ -79,10 +79,7 @@ function translate(text, from, to) {
 var useLang = "";
 bot.use({
     receive: function (event, next) {
-        //console.log("((((((((((((", event.text)
-        //console.log("in recieve", useLang)
         if (useLang != "" && useLang != "en") {
-            //console.log("heyyyyyyyyy")
             axios({
                 baseURL: endpoint,
                 url: '/translate',
@@ -344,15 +341,15 @@ bot.dialog('preconfirm', [(session, args, next) => {
             res.json()).then(d => {
                 console.log(d)
                 if (useLang == "en") {
-                    session.send("Please click on the link to connect to our " + session.userData.dept + " Department customer service team. " + `http://localhost:8080/main.html?id=${id}&dept=${session.userData.dept}`);
+                    session.send("Please click on the link to connect to our " + session.userData.dept + " Department customer service team. " + `https://customer-support.azurewebsites.net/main.html?id=${id}&dept=${session.userData.dept}`);
                     session.send("Thanks for contacting me.")
                 }
                 else if (useLang == "fr") {
-                    session.send("Veuillez cliquer sur le lien pour vous connecter à notre " + session.userData.dept + " Department customer service team. " + `http://localhost:8080/main.html?id=${id}&dept=${session.userData.dept}`);
+                    session.send("Veuillez cliquer sur le lien pour vous connecter à notre " + session.userData.dept + " Department customer service team. " + `https://customer-support.azurewebsites.net/main.html?id=${id}&dept=${session.userData.dept}`);
                     session.send("Merci de m'avoir contacté.")
                 }
                 else if (useLang == "it") {
-                    session.send("Fare clic sul collegamento per connettersi al nostro " + session.userData.dept + " Department customer service team. " + `http://localhost:8080/main.html?id=${id}&dept=${session.userData.dept}`);
+                    session.send("Fare clic sul collegamento per connettersi al nostro " + session.userData.dept + " Department customer service team. " + `https://customer-support.azurewebsites.net/main.html?id=${id}&dept=${session.userData.dept}`);
                     session.send("Grazie per avermi contattato.")
                 }
                 delete session.userData.dept;
